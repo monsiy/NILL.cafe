@@ -1,0 +1,176 @@
+<!doctype html>
+
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>NIL | Panel de Administración</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+
+  <body>
+    <header class="admin-header">
+      <div>
+        <h1>NIL</h1>
+
+        <p>Panel de Administración</p>
+      </div>
+
+      <a href="index.html" class="view-menu"> Ver menú </a>
+    </header>
+
+    <main class="admin-container">
+      <!-- =========================
+         عنوان پنل
+    ========================== -->
+
+      <section class="admin-title">
+        <h2>Gestionar menú</h2>
+
+        <p>Añade, edita y administra los productos del restaurante.</p>
+      </section>
+
+      <!-- =========================
+         ADD PRODUCT
+    ========================== -->
+
+      <section class="product-form">
+        <h2>Añadir producto</h2>
+
+        <div class="form-group">
+          <label for="product-name"> Nombre del producto </label>
+
+          <input
+            type="text"
+            id="product-name"
+            placeholder="Ej. Pizza Margarita"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="product-category"> Categoría </label>
+
+          <select id="product-category">
+            <option value="">Seleccionar categoría</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="product-subcategory"> Subcategoría </label>
+          <input
+            type="text"
+            id="product-subcategory"
+            placeholder="Ej. SALSA TOMATE"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="product-description"> Descripción </label>
+
+          <textarea
+            id="product-description"
+            placeholder="Descripción del producto..."
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="product-price"> Precio </label>
+
+          <input type="text" id="product-price" placeholder="Ej. 13,95 €" />
+        </div>
+        <div class="form-group">
+          <label for="product-price2"> Segundo precio </label>
+          <input type="text" id="product-price2" placeholder="Ej. 19,95 €" />
+        </div>
+
+        <div class="form-group">
+          <label> Foto del producto </label>
+
+          <div class="image-upload">
+            <div class="upload-icon">📷</div>
+
+            <p>Seleccionar una imagen</p>
+
+            <span> JPG, PNG o WEBP </span>
+
+            <input type="file" id="product-image" accept="image/*" />
+          </div>
+        </div>
+
+        <button class="add-product">Añadir producto</button>
+      </section>
+
+      <!-- =========================
+         CATEGORIES MANAGEMENT
+    ========================== -->
+
+      <section class="categories-management">
+        <div class="section-header">
+          <h2>Categorías del menú</h2>
+
+          <p>Gestiona las categorías de tu menú</p>
+        </div>
+
+        <div class="category-form">
+          <input
+            type="text"
+            id="category-name"
+            placeholder="Nombre de la categoría"
+          />
+
+          <input
+            type="text"
+            id="category-description"
+            placeholder="Descripción"
+          />
+
+          <input type="file" id="category-image" accept="image/*" />
+
+          <button class="add-category">Añadir categoría</button>
+        </div>
+
+        <div class="categories-list" id="categories-list">
+          <p>Cargando categorías...</p>
+        </div>
+      </section>
+
+      <!-- =========================
+         MENU MANAGEMENT
+    ========================== -->
+
+      <section class="products">
+        <div class="products-header">
+          <div>
+            <h2>Menú del restaurante</h2>
+
+            <p>Edita los productos que aparecen en el menú.</p>
+          </div>
+
+          <span id="products-count"> 0 productos </span>
+        </div>
+
+        <!--
+            این قسمت توسط JavaScript
+            با محصولات دیتابیس پر می‌شود
+        -->
+
+        <div class="admin-menu" id="admin-menu">
+          <p class="loading-menu">Cargando menú...</p>
+        </div>
+      </section>
+    </main>
+
+    <script src="admin.js"></script>
+  </body>
+</html>

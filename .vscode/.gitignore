@@ -1,0 +1,5 @@
+node_modules/
+backend/cafe.db
+.env
+cloudflared-windows-amd64.exe
+localxpose.zip
