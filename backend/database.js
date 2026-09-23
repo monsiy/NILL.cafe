@@ -1,6 +1,7 @@
 const Database = require("better-sqlite3");
 
-const db = new Database("cafe.db");
+const path = require("path");
+const db = new Database(path.join(__dirname, "cafe.db"));
 
 // =========================
 // PRODUCTS TABLE
