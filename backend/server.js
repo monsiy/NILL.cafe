@@ -2,6 +2,12 @@ const express = require("express");
 const cors = require("cors");
 const db = require("./database");
 
+const productCount = db.prepare("SELECT COUNT(*) AS count FROM products").get();
+
+if (productCount.count === 0) {
+  require("./seed-menu");
+}
+
 const app = express();
 
 app.use(cors());
