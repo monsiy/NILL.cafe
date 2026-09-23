@@ -1,4 +1,4 @@
-const API_URL = "http://172.20.10.2:3000";
+const API_URL = "https://nill-cafe-1.onrender.com";
 
 // =========================
 // گرفتن عناصر
